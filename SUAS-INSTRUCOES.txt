@@ -1,0 +1,2 @@
+Para ver o resultado basta rodar o main da classe Application.
+Esse projeto utiliza Java 8 com recursos e APIs do java 8.
