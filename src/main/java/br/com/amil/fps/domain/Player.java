@@ -61,6 +61,7 @@ public class Player {
 		}
 		
 		public int longestStreak() {
+			if(isImmortal()) return currentStreak;
 			streaks.sort(Comparator.reverseOrder());
 			return streaks.get(0);
 		}

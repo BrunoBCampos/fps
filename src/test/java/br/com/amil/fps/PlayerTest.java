@@ -58,7 +58,7 @@ public class PlayerTest {
 	}
 	
 	@Test
-	public void addictedPlayerShoudlKnowHisLongestStreak() {
+	public void addictedPlayerShoudlKnowHisLongestStreakIfHeDies() {
 		Player player =  new Player("Bira");
 		player.kill("AK47");
 		player.died();
@@ -69,6 +69,18 @@ public class PlayerTest {
 		player.died();
 		player.kill("AK47");
 		assertThat(player.addicted().longestStreak(), is(equalTo(4)));
+	}
+	
+	@Test
+	public void addictedPlayerShoudlKnowHisLongestStreakIfHeIsImmortal() {
+		Player player =  new Player("Bira");
+		player.kill("AK47");
+		player.kill("KNIFE");
+		player.kill("KNIFE");
+		player.kill("AK47");
+		player.kill("KNIFE");
+		player.kill("AK47");
+		assertThat(player.addicted().longestStreak(), is(equalTo(6)));
 	}
 	
 
